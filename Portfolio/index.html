@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Darci Kole</title>
+        <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
+        <script src="portfolio.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+<!-- BODY-->
+    <body class="background">
+
+        <!-- FADE IN EFFECT --> 
+        <script>
+        document.body.className += 'fade-out';
+        $(function() {
+            $('body').removeClass('fade-out');
+            }
+        );
+        </script>
+
+<!-- NAVBAR-->
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
+            <a href="#About">About</a>
+            <a href="#Github">Github</a>
+            <a onclick="openForm()">Contact</a>
+        </div>
+            <!-- close form -->
+        <div class="btn cancel" onclick="closeForm()">
+<!-- HOME -->
+<div id="Home"> 
+        <br> <!-- Breaks to add space between navbar and first heading -->
+        <br>
+
+<!-- VIDEO -->     <!-- ?? MAYBE USE HEADER OR CONTAINER INSTEAD OF FULL BACKGROUND IN BODY ?? -->
+      
+            <video autoplay muted loop id="Computer_Keyboard_Video">
+                <source src="CSS/Video/Computer Keyboard - 3174.mp4" type="video/mp4">
+                Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
+            </video>
+        </div>
+
+<!-- VIDEO TEXT -->
+        <div class="Video_Text">
+            <h1>Darci Kole's Portfolio</h1>
+                <p>               
+                    <q>When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.
+                    </q>
+                    <br>-Why The Lucky Stiff<br>
+                    <br>
+                                     
+                </p>
+        </div>
+<!-- SLIDESHOW SECTION -->
+<div id="Slideshow">
+        <div id="Slideshow_Background"> 
+          <div id="Slideshow_Container">
+            
+            <div class="mySlides fade">
+              <div class="Slide_Number">1 / 6</div>
+                <img class="Slide_Show_Images" src="CSS/Images/Darci Kole headshot.png" style="width:100%">
+                  <div class="text">I'm available to assist you on your project!</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="Slide_Number">2 / 6</div>
+                <img class="Slide_Show_Images" src="CSS/Images/HTML_CSS_and_JavaScript.jpeg" style="width:100%">
+                  <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+            </div>
+    
+            <div class="mySlides fade">
+              <div class="Slide_Number">3 / 6</div>
+                <img class="Slide_Show_Images" src="CSS/Images/Python.png" style="width:100%">
+                  <div class="text">the popular programming language Python,</div>
+            </div>
+    
+            <div class="mySlides fade">
+              <div class="Slide_Number">4 / 6</div>
+                <img class="Slide_Show_Images" src="CSS/Images/C_Sharp_and_Dot_NET.png" style="width:100%">
+                  <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+            </div>
+    
+            <div class="mySlides fade">
+              <div class="Slide_Number">5 / 6</div>
+                <img class="Slide_Show_Images" src="CSS/Images/SQL_and_Database.jpg" style="width:100%">
+                  <div class="text">back end development, databases and SQL.</div>
+                </div>
+    
+            <div class="mySlides fade">
+              <div class="Slide_Number">6 / 6</div>
+                <img class="Slide_Show_Images" src="CSS/Images/Coding_1.jpg" style="width:100%">
+                  <div class="text"> 
+                    <a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
+                  </div>
+            </div>
+        
+              <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            
+          </div>
+      <br>
+    
+          <div style="text-align:center">
+     
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+            <span class="dot" onclick="currentSlide(6)"></span> 
+    
+          </div>
+        </div>
+    </div>
+    <!-- SLIDESHOW JS -->
+<script>
+ 
+   var slideIndex = 1;
+	  showSlides(slideIndex);
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1}    
+		if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	}
+  </script>
+  
+<!-- /SLIDESHOW SECTION -->
+
+
+<!-- ABOUT SECTION -->
+        <div class="Row" id="About">
+            <div class="Column_2"> <!-- Left column -->
+                <img src="CSS/Images/computer-1209641_1920.jpg" alt="Coding">
+            </div>
+
+            <div class="Column_1"> <!-- Right column -->
+                <h1>About</h1>
+                    <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  As a mother, I enjoy time with my family and supporting their activities and interests.  I also enjoy traveling, reading, and am a wine enthusiast.           
+                        <br><br>
+                        I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
+                        I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+                    </p>
+            </div>
+        </div>
+
+<!-- GITHUB SECTION -->
+        <div class="Row" id="Github">
+            <div class="Column_1"> <!-- Left column-->
+            <h1>GitHub</h1>
+            <p>You can view my coding projects on my GitHub profile here:
+            <a class="git_acct" href="https://github.com/darcikole" target="_blank">Darci Kole GitHub</a><br><br>
+            Or check out the links below: <br> <br>
+            <a href="https://drive.google.com/file/d/1CuVh9xAbgwKzkJeX9nO1vcQ31piGwOpg" target="_blank">Resumé</a><br>
+            <a href="https://www.linkedin.com/in/darcikole/">linkedin</a><br>
+            <a href="https://www.seattlewinebuzz.com/" target="_blank">SeattleWineBuzz.com</a>
+            </p>
+            </div>
+
+            <div class="Column_2"> <!-- Right column -->
+                <a href="https://github.com/darcikole" target="_blank"><img src="CSS/Images/GitHub.png" alt="GitHub"></a>
+            </div>
+
+        </div>
+    </div>
+<!-- CONTACT SECTION -->
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+            <div class="form-popup" id="myForm">
+            <form action="" method="POST" class="form-container">
+
+            <h1>Contact</h1>
+			<label for="name"><b>Name</b></label>
+			  <input type="text" placeholder="Type your name here" name="name" required>
+			<label for="phone"><b>Phone</b></label>
+			  <input type="text" placeholder="Enter your phone number here" name="phone">
+			<label for="email"><b>Email</b></label>		
+			  <input type="text" placeholder="Type your email address here" name="email" required>
+			<label for="message"><b>Message</b></label>
+			  <input type="text" placeholder="Type your message here" name="message">
+                          
+                        <button type="submit" class="btn">SUBMIT</S></button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                    </form>
+            </div>
+        </div>
+
+<!-- FOOTER SECTION -->
+        <footer>
+            <p>&copy; 2019 &nbsp;|&nbsp; DarciKole.com &nbsp;| &nbsp;Seattle, WA</p>
+        </footer>
+    
+    </body>
+
+</html>
