@@ -7,15 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Darci Kole</title>
         <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500' rel='stylesheet' type='text/css'>
         <script src="portfolio.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js?render=6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs"></script>
+        <script>
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs', {action: 'homepage'}).then(function(token) {
+               document.getElementById("g-token").value = token;
+            });
+        });
+        </script>
         
-
-          
-
     </head>
 
 <!-- BODY-->
@@ -204,7 +208,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="form_name">First Name *</label>
-                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your first name *" required="required"
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="First Name * " required="required"
                             data-error="First name is required.">
                         <div class="help-block with-errors"></div>
                     </div>
@@ -212,7 +216,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="form_lastname">Last Name *</label>
-                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your last name *" required="required"
+                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name *" required="required"
                             data-error="Last name is required.">
                         <div class="help-block with-errors"></div>
                     </div>
@@ -222,7 +226,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="form_email">Email *</label>
-                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required"
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required"
                             data-error="Valid email is required.">
                         <div class="help-block with-errors"></div>
                     </div>
@@ -230,26 +234,17 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label for="form_phone">Phone</label>
-                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone number">
+                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="form_message">Message *</label>
-                <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required"
+                <textarea id="form_message" name="message" class="form-control" placeholder="Message *" rows="4" required="required"
                     data-error="Please, leave us a message."></textarea>
                 <div class="help-block with-errors"></div>
             </div>
-
-
-            <div class="form-group">
-                <div class="g-recaptcha" data-sitekey="6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
-                <div class="help-block with-errors"></div>
-            </div>
-
-
             <input type="submit" class="btn btn-success btn-send" value="Send message">
 
             <p class="text-muted">
@@ -268,14 +263,9 @@
             <p>&copy; 2019 &nbsp;|&nbsp; DarciKole.com &nbsp;| &nbsp;Seattle, WA</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         
-        <script>grecaptcha.ready(function() {
-            grecaptcha.execute('6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs', {action: 'homepage'}).then(function(token) {
-               document.getElementById("g-token").value = token;
-            });
-        });
-        </script>
+        
         <script src="validator.js"></script>
         <script src="contact.js"></script>
     

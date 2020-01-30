@@ -1,10 +1,10 @@
 <?php
 // require ReCaptcha class
-require('recaptcha-master/src/autoload.php');
+//require('recaptcha-master/src/autoload.php');
 
 // configure
 // an email address that will be in the From field of the email.
-$from = 'Demo contact form <demo@domain.com>';
+$from = 'Incoming Message DK.com <darci@darcikole.com>';
 
 // an email address that will receive the email with the output of the form
 $sendTo = 'darci@darcikole.com';
@@ -23,7 +23,7 @@ $okMessage = 'Contact form successfully submitted. Thank you, I will get back to
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
 // ReCaptch Secret
-$recaptchaSecret = '6LdrVtQUAAAAANFI5bohZI4AMn9Ivl3Jkc2anu5h';
+//$recaptchaSecret = '6LdrVtQUAAAAANFI5bohZI4AMn9Ivl3Jkc2anu5h';
 
 // let's do the sending
 
@@ -43,31 +43,21 @@ if (isset($_POST) && isset($_POST["btnSubmit"]))
     echo "<pre>";
     print_r($response);
     echo "</pre>";
+
+    if($response->success)
+	{
+		echo '<center><h1>Validation Success!</h1></center>';
+	}
+	else
+	{
+		echo '<center><h1>Captcha Validation Failed..!</h1></cetner>';
+	}
 }
 
 try {
     if (!empty($_POST)) {
-
-        // validate the ReCaptcha, if something is wrong, we throw an Exception,
-        // i.e. code stops executing and goes to catch() block
         
-        if (!isset($_POST['g-recaptcha-response'])) {
-            throw new \Exception('ReCaptcha is not set.');
-        }
-
-        // do not forget to enter your secret key from https://www.google.com/recaptcha/admin
-        
-        $recaptcha = new \ReCaptcha\ReCaptcha($recaptchaSecret, new \ReCaptcha\RequestMethod\CurlPost());
-        
-        // we validate the ReCaptcha field together with the user's IP address
-        
-        $response = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
-
-        if (!$response->isSuccess()) {
-            throw new \Exception('ReCaptcha was not validated.');
-        }
-        
-        // everything went well, we can compose the message, as usually
+        // we can compose the message
         
         $emailText = "You have a new message from your contact form\n=============================\n";
 
