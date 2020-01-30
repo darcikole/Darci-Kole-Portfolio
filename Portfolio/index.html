@@ -7,8 +7,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Darci Kole</title>
         <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500' rel='stylesheet' type='text/css'>
         <script src="portfolio.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs"></script>
+        
+
+          
+
     </head>
 
 <!-- BODY-->
@@ -150,66 +157,127 @@
 
 
 <!-- ABOUT SECTION -->
-        <div class="Row" id="About">
-            <div class="Column_2"> <!-- Left column -->
-                <img src="CSS/Images/computer-1209641_1920.jpg" alt="Coding">
-            </div>
+  <div class="Row" id="About">
+      <div class="Column_2"> <!-- Left column -->
+          <img src="CSS/Images/computer-1209641_1920.jpg" alt="Coding">
+      </div>
 
-            <div class="Column_1"> <!-- Right column -->
-                <h1>About</h1>
-                    <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  As a mother, I enjoy time with my family and supporting their activities and interests.  I also enjoy traveling, reading, and am a wine enthusiast.           
-                        <br><br>
-                        I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
-                        I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
-                    </p>
-            </div>
-        </div>
+      <div class="Column_1"> <!-- Right column -->
+          <h1>About</h1>
+              <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  As a mother, I enjoy time with my family and supporting their activities and interests.  I also enjoy traveling, reading, and am a wine enthusiast.           
+                  <br><br>
+                  I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
+                  I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+              </p>
+      </div>
+  </div>
 
 <!-- GITHUB SECTION -->
-        <div class="Row" id="Github">
-            <div class="Column_1"> <!-- Left column-->
-            <h1>GitHub</h1>
-            <p>You can view my coding projects on my GitHub profile here:
-            <a class="git_acct" href="https://github.com/darcikole" target="_blank">Darci Kole GitHub</a><br><br>
-            Or check out the links below: <br> <br>
-            <a href="https://drive.google.com/file/d/1CuVh9xAbgwKzkJeX9nO1vcQ31piGwOpg" target="_blank">Resumé</a><br>
-            <a href="https://www.linkedin.com/in/darcikole/">linkedin</a><br>
-            <a href="https://www.seattlewinebuzz.com/" target="_blank">SeattleWineBuzz.com</a>
-            </p>
-            </div>
+  <div class="Row" id="Github">
+      <div class="Column_1"> <!-- Left column-->
+      <h1>GitHub</h1>
+      <p>You can view my coding projects on my GitHub profile here:
+      <a class="git_acct" href="https://github.com/darcikole" target="_blank">Darci Kole GitHub</a><br><br>
+      Or check out the links below: <br> <br>
+      <a href="https://drive.google.com/file/d/1CuVh9xAbgwKzkJeX9nO1vcQ31piGwOpg" target="_blank">Resumé</a><br>
+      <a href="https://www.linkedin.com/in/darcikole/">linkedin</a><br>
+      <a href="https://www.seattlewinebuzz.com/" target="_blank">SeattleWineBuzz.com</a>
+      </p>
+      </div>
 
-            <div class="Column_2"> <!-- Right column -->
-                <a href="https://github.com/darcikole" target="_blank"><img src="CSS/Images/GitHub.png" alt="GitHub"></a>
-            </div>
+      <div class="Column_2"> <!-- Right column -->
+          <a href="https://github.com/darcikole" target="_blank"><img src="CSS/Images/GitHub.png" alt="GitHub"></a>
+      </div>
 
-        </div>
-    </div>
+  </div>
+</div>
 <!-- CONTACT SECTION -->
-        <div id="Contact">
-            <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
-            <div class="form-popup" id="myForm">
-            <form action="contact.php" method="POST" class="form-container">
+  <div id="Contact">
+      <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+      <div class="form-popup" id="myForm">
+      <form action="contact.php" method="POST" class="form-container" id="contact-form" role="form">
+        <input type="hidden" id="g-token" name="g-token"/>
+        <div class="messages"></div>
 
-            <h1>Contact</h1>
-			<label for="name"><b>Name</b></label>
-			  <input type="text" placeholder="Type your name here" name="name" required>
-			<label for="phone"><b>Phone</b></label>
-			  <input type="text" placeholder="Enter your phone number here" name="phone">
-			<label for="email"><b>Email</b></label>		
-			  <input type="text" placeholder="Type your email address here" name="email" required>
-			<label for="message"><b>Message</b></label>
-			  <input type="text" placeholder="Type your message here" name="message">
-                          
-                        <button type="submit" class="btn">SUBMIT</S></button>
-                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-                    </form>
+        <div class="controls">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="form_name">First Name *</label>
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your first name *" required="required"
+                            data-error="First name is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="form_lastname">Last Name *</label>
+                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your last name *" required="required"
+                            data-error="Last name is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="form_email">Email *</label>
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required"
+                            data-error="Valid email is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="form_phone">Phone</label>
+                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone number">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="form_message">Message *</label>
+                <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required"
+                    data-error="Please, leave us a message."></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+                <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+                <div class="help-block with-errors"></div>
+            </div>
+
+
+            <input type="submit" class="btn btn-success btn-send" value="Send message">
+
+            <p class="text-muted">
+                <strong>*</strong> These fields are required. 
+            </p>
+
         </div>
+        
+        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+      </form>
+      </div>
+    </div>
 
 <!-- FOOTER SECTION -->
         <footer>
             <p>&copy; 2019 &nbsp;|&nbsp; DarciKole.com &nbsp;| &nbsp;Seattle, WA</p>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+        <script>grecaptcha.ready(function() {
+            grecaptcha.execute('6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs', {action: 'homepage'}).then(function(token) {
+               document.getElementById("g-token").value = token;
+            });
+        });
+        </script>
+        <script src="validator.js"></script>
+        <script src="contact.js"></script>
     
     </body>
 
