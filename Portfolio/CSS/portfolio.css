@@ -127,7 +127,7 @@ q {
     font-weight: bold;
 }
 /* ---------- SLIDESHOW STYLING -----------*/
-#Slideshow_Background {
+/#Slideshow_Background {
     background:rgba(255,255,255, 0.35); /* This creates a slightly transparent white background that's placed over the video */
     }
   
@@ -147,14 +147,14 @@ q {
   }
   
   /* Slideshow section / container */
-  #Slideshow_Container {
+   #Slideshow_Container { 
     width: 39.5vw; /* change width  (39.5 orig)*/
     height: auto;
     padding-top: 4%;
     position: relative;
     margin: auto;
   
-  }
+  } 
   
   /* Images contained within slideshow */
   .Slide_Show_Images {
@@ -166,7 +166,7 @@ q {
   
   
   /* Next and previous buttons */
-  .Previous, .Next {
+  .carousel-control-prev, .carousel-control-next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -182,16 +182,11 @@ q {
   }
   
   /* Positioning the right-hand next button */
-  .Next {
+  /* .carousel-control-next  {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
-  /* Hover effect on slide show buttons */
-  .Previous:hover, .Next:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-  }
+  } */
+ 
   
   /* Slideshow text */
   .text {
