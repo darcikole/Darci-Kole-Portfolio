@@ -4,11 +4,11 @@
 <!-- HEAD -->
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Darci Kole</title>
         <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <script src="portfolio.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js?render=6LdrVtQUAAAAAF5FNSUSt6pafJm2lGrXPjmScejs"></script>
         <script>
@@ -34,19 +34,32 @@
         </script>
 
 <!-- NAVBAR-->
-        <div class="Navbar">
+        <div class="Navbar" id="myTopnav">
             <a class="active" href="#Home">Home</a>
             <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#Github">Github</a>
-            <a onclick="openForm()">Contact</a>
+            <a class="navContact" onclick="openForm()">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
         </div>
             <!-- close form -->
         <div class="btn cancel" onclick="closeForm()">
+<!-- responsive navbar function -->
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "Navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "Navbar";
+              }
+            }
+            </script>
 <!-- HOME -->
     <div id="Home"> 
-        <br> <!-- Breaks to add space between navbar and first heading -->
-        <br>
+        
 
 <!-- VIDEO -->    
       
@@ -167,13 +180,16 @@
 
       <div class="Column_1"> <!-- Right column -->
           <h1>About</h1>
-              <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  As a mother, I enjoy time with my family and supporting their activities and interests.  I also enjoy traveling, reading, and am a wine enthusiast.           
-                  <br><br>
+            <div class="container" id="aboutCol">
+              <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  <br><br>
+
                   I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
                   I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
               </p>
+            </div>
       </div>
   </div>
+
 
 <!-- GITHUB SECTION -->
   <div class="Row" id="Github">
@@ -193,6 +209,40 @@
       </div>
 
   </div>
+</div>
+
+<!-- MOBILE SECTIONS-->
+
+<div class="container" id="mobCol">
+  <div class="Column_4"> <!-- Right column -->
+    <h1>About</h1>
+        <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  As a mother, I enjoy time with my family and supporting their activities and interests.  I also enjoy traveling, reading, and am a wine enthusiast.           
+            <br><br>
+            I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
+            I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+        </p>
+  </div>
+
+<div class="Column_3"> <!-- Left column -->
+  <img class="mobImg"src="CSS/Images/computer-1209641_1920.jpg" alt="Coding">
+</div>
+
+<div class="Column_4"> <!-- Left column-->
+  <h1>GitHub</h1>
+  <p>You can view my coding projects on my GitHub profile here:
+  <a class="git_acct" href="https://github.com/darcikole" target="_blank">Darci Kole GitHub</a><br><br>
+  Or check out the links below: <br> <br>
+  <a href="https://drive.google.com/file/d/1CuVh9xAbgwKzkJeX9nO1vcQ31piGwOpg" target="_blank">Resumé</a><br>
+  <a href="https://www.linkedin.com/in/darcikole/">linkedin</a><br>
+  <a href="https://www.seattlewinebuzz.com/" target="_blank">SeattleWineBuzz.com</a>
+  </p>
+  </div>
+
+  <div class="Column_3"> <!-- Right column -->
+      <a href="https://github.com/darcikole" target="_blank"><img class="mobImg" src="CSS/Images/GitHub.png" alt="GitHub"></a>
+  </div>
+
+</div>
 </div>
 <!-- CONTACT SECTION -->
   <div id="Contact">
@@ -247,7 +297,10 @@
             <input type="submit" class="btn btn-success btn-send" value="Send message">
 
             <p class="text-muted">
-                <strong>*</strong> These fields are required. 
+                <strong>*</strong> These fields are required. <br>
+                This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
             </p>
 
         </div>
@@ -263,6 +316,8 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+        <script src="portfolio.js"></script>
+
         <script src="validator.js"></script>
         <script src="contact.js"></script>
     
