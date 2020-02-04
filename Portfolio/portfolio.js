@@ -8,9 +8,9 @@ $(document).ready(function(){
 
 // contact form open/close //
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById("ModalScrollable").style.display = "block";
 }
 
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("ModalScrollable").style.display = "none";
 } 

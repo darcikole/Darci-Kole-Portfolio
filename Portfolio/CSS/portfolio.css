@@ -28,18 +28,26 @@ body.fade-out {
     animation: moveNav 5s;
     
 }
-.Navbar .icon {
+#myTopnav .icon {
     display: none;
   }
-  .Navbar a:not([href]) {
+#mobileNav .icon{
+margin-right: 10px;
+}
+.Navbar a:not([href]) {
       color: white;
   }
  
 .Navbar.responsive a{
     -webkit-animation: none !important;
     animation: none !important;
+    
 }
-
+@media screen and (min-width: 1025px) {
+    #mobileNav {
+        display: none;
+    }
+}
 @media screen and (max-width: 600px) {
     .Navbar a:not(:first-child) {display: none;}
     .Navbar  a.icon {
@@ -92,6 +100,20 @@ body.fade-out {
     to {top: 0px;}
 }
 
+@media screen and (max-width: 600px) {
+    @keyframes moveNav {
+        from {top: 0vw;}
+        to {top: 0vw;}
+    }
+}
+
+@media screen and (max-width: 600px) {
+    @keyframes movenavText {
+        from {top: 0vw;}
+        to {top: 0px;}
+    }
+}
+
 /* ----- NAVBAR HOVER EFFECT ----- */
 .Navbar a:hover {
     background-color: #F4F4F4;
@@ -115,6 +137,11 @@ body.fade-out {
     top: 0;
     z-index: -1;
     animation: zoominoutsinglefeatured 5s;
+}
+@media screen and (max-width: 600px) {
+    #Computer_Keyboard_Video {
+        display: none;
+    }
 }
 
 /* video zoom effect upon page load */
@@ -141,20 +168,28 @@ body.fade-out {
     -webkit-animation: moveNav 4s;
         animation: movevideoText 4s;
 }
+@media screen and (min-width: 600px) {
+    .Video_Text_Mobile {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 600px) {
     .Video_Text {
-        background: rgba(0, 0, 0, 0.3);
-        color: white;
-        text-align: center;
-        width: 100%;
-        padding-top: .1vh;
-        padding-bottom: 1vh;
-        margin-top: 23%;
-            position: relative;
-        -webkit-animation: moveNav 4s;
-            animation: movevideoText 4s;
+        display: none;
     }
+}
+.Video_Text_Mobile {
+    background: white;
+    color: black;
+    text-align: center;
+    width: 100%;
+    padding-top: .1vh;
+    padding-bottom: 1vh;
+    margin-top: 23%;
+    position: relative;
+    -webkit-animation: moveNav 4s;
+    animation: movevideoText 4s;
 }
 
 .Video_Text h1 {
@@ -168,11 +203,7 @@ body.fade-out {
     transition: 1s;
     transform: scale(1.25);   
 }
-@media screen and (max-width: 600px) {
-    .Video_Text p:hover {
-    display: none;
-    }
-}
+
 /* ----- QUOTE STYLING ----- */
 q {
     font-style: italic;
@@ -180,7 +211,7 @@ q {
 }
 /* ---------- SLIDESHOW STYLING -----------*/
 #Slideshow_Background {
-    background:rgba(255,255,255, 0.35); /* This creates a slightly transparent white background that's placed over the video */
+    background:rgba(255,255,255, 0.55); /* This creates a slightly transparent white background that's placed over the video */
     }
   
   
@@ -325,6 +356,11 @@ q {
     display: table;
     clear: both;
 }
+@media screen and (min-width: 1025px) {
+    #mobCol {
+        display: none;
+    }
+}
 .Column_3 {
 align-content: center;
     width: 100%;
@@ -350,11 +386,7 @@ align-content: center;
       display: none;
     }
   }
-@media screen and (min-width: 1025px) {
-    #mobCol {
-        display: none;
-    }
-}
+
 
 /* ----- IMAGE STYLING ----- */
 img {
@@ -413,23 +445,24 @@ h1 {
     }
 }
 
-/* #Github p {
-    margin-top: 10%;
-} */
-
 /* ----- ANCHOR STYLING ----- */
 .Row a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
-
+#mobCol a {
+    text-decoration: none;
+    color: black;
+}
 /* ----- ANCHOR HOVER STYLING ----- */
 
 .Row a:hover {
     color: #FF003F;
 }
-
+#mobCol a:hover {
+    color:#FF003F;
+}
 /* ----- CONTACT INPUT STYLING ----- */
 
 .form-container input[type=text] {
@@ -472,22 +505,6 @@ form {
         display: none;
     }
 }
-.form-popup {
-    border: 3px solid #f0f1f0;
-    z-index: 8;
-    display: none;
-    position: fixed;
-    bottom: 6px;
-    right: 6px;
-}
-
-.form-container {
-    max-width: 49vw;
-    padding: 9px;
-    background-color: white;
-}
-
-
 
 .form-container .btn {
     background-color: white;
@@ -496,7 +513,7 @@ form {
     margin-bottom: 1vw;
 }
 
-.form-container .cancel {
+button.btn.cancel {
     background-color: black;
     color: white;
     border-color: gray;
@@ -524,11 +541,9 @@ button:hover, .form-container .btn:hover {
     border-color: silver;
 }
 
-.form-container .cancel:hover {
+button.btn.cancel:hover {
     color: white;
     background-color:#a8d3e3;
-    -webkit-transition-duration: 1s;
-    transition-duration: 1s;
     border-style: solid;
     border-color: black;
 }

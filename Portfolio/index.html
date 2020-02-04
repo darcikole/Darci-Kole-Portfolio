@@ -39,24 +39,33 @@
             <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#Github">Github</a>
-            <a class="navContact" onclick="openForm()">Contact</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-            </a>
+            <a href="#ModalScrollable" data-toggle="modal">Contact</a>
         </div>
             <!-- close form -->
         <div class="btn cancel" onclick="closeForm()">
-<!-- responsive navbar function -->
-          <script>
-            function myFunction() {
-              var x = document.getElementById("myTopnav");
-              if (x.className === "Navbar") {
-                x.className += " responsive";
-              } else {
-                x.className = "Navbar";
+
+<!-- RESPONSIVE NAVBAR -->
+            <div class="Navbar" id="mobileNav">
+              <a class="active" href="#Home">Home</a>
+              <a href="#Links">Links</a>
+              <a href="#ModalScrollable" data-toggle="modal">Contact</a>
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
+          </div>
+              <!-- close form -->
+          <div class="btn cancel" onclick="closeForm()">
+  <!-- responsive navbar function -->
+            <script>
+              function myFunction() {
+                var x = document.getElementById("mobileNav");
+                if (x.className === "Navbar") {
+                  x.className += " responsive";
+                } else {
+                  x.className = "Navbar";
+                }
               }
-            }
-            </script>
+              </script>
 <!-- HOME -->
     <div id="Home"> 
         
@@ -80,6 +89,9 @@
                                      
                 </p>
         </div>
+        <div class="Video_Text_Mobile">
+          <h1>Darci Kole's Portfolio</h1>
+      </div>
 <!-- SLIDESHOW SECTION -->
 <div id="Slideshow">
     <div id="Slideshow_Background"> 
@@ -213,108 +225,122 @@
 
 <!-- MOBILE SECTIONS-->
 
-<div class="container" id="mobCol">
-  <div class="Column_4"> <!-- Right column -->
+<div class="container" id="mobCol"> 
+  <div class="Column_4"> 
     <h1>About</h1>
-        <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!  As a mother, I enjoy time with my family and supporting their activities and interests.  I also enjoy traveling, reading, and am a wine enthusiast.           
-            <br><br>
-            I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
-            I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
-        </p>
+      <p> Hello and welcome to my page!  I'm a software developer who loves to code and create!             
+          <br><br>
+          I'm a graduate of <a href="https://www.learningcodeanywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. <br><br>
+          I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+      </p>
   </div>
 
-<div class="Column_3"> <!-- Left column -->
-  <img class="mobImg"src="CSS/Images/computer-1209641_1920.jpg" alt="Coding">
-</div>
-
-<div class="Column_4"> <!-- Left column-->
-  <h1>GitHub</h1>
-  <p>You can view my coding projects on my GitHub profile here:
-  <a class="git_acct" href="https://github.com/darcikole" target="_blank">Darci Kole GitHub</a><br><br>
-  Or check out the links below: <br> <br>
-  <a href="https://drive.google.com/file/d/1CuVh9xAbgwKzkJeX9nO1vcQ31piGwOpg" target="_blank">Resumé</a><br>
-  <a href="https://www.linkedin.com/in/darcikole/">linkedin</a><br>
-  <a href="https://www.seattlewinebuzz.com/" target="_blank">SeattleWineBuzz.com</a>
-  </p>
+  <div class="Column_3"> 
+    <img class="mobImg"src="CSS/Images/computer-1209641_1920.jpg" alt="Coding">
+  </div>
+  
+  <div class="Column_4" id="Links"> 
+    <h1>GitHub</h1>
+    <p>You can view my coding projects on my GitHub profile here:
+    <a class="git_acct" href="https://github.com/darcikole" target="_blank">Darci Kole GitHub</a><br><br>
+    Or check out the links below: <br> <br>
+    <a href="https://drive.google.com/file/d/1CuVh9xAbgwKzkJeX9nO1vcQ31piGwOpg" target="_blank">Resumé</a><br>
+    <a href="https://www.linkedin.com/in/darcikole/">linkedin</a><br>
+    <a href="https://www.seattlewinebuzz.com/" target="_blank">SeattleWineBuzz.com</a>
+    </p>
   </div>
 
-  <div class="Column_3"> <!-- Right column -->
+  <div class="Column_3"> 
       <a href="https://github.com/darcikole" target="_blank"><img class="mobImg" src="CSS/Images/GitHub.png" alt="GitHub"></a>
   </div>
+</div>
 
-</div>
-</div>
 <!-- CONTACT SECTION -->
-  <div id="Contact">
-      <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
-      <div class="form-popup" id="myForm">
-      <form action="contact.php" method="POST" class="form-container" id="contact-form" role="form">
-        <input type="hidden" id="g-token" name="g-token"/>
-        <div class="messages"></div>
+  
+   <!-- Button trigger modal -->
+<button type="button" class="Pop_Up_Button" data-toggle="modal" data-target="#ModalScrollable">
+  CONTACT
+</button>
 
-        <div class="controls">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="form_name">First Name *</label>
-                        <input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required"
-                            data-error="First name is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="form_lastname">Last Name *</label>
-                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required"
-                            data-error="Last name is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="form_email">Email *</label>
-                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required"
-                            data-error="Valid email is required.">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label for="form_phone">Phone</label>
-                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="form_message">Message *</label>
-                <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="4" required="required"
-                    data-error="Please, leave us a message."></textarea>
-                <div class="help-block with-errors"></div>
-            </div>
-            <input type="submit" class="btn btn-success btn-send" value="Send message">
-
-            <p class="text-muted">
-                <strong>*</strong> These fields are required. <br>
-                This site is protected by reCAPTCHA and the Google
-                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-                <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-            </p>
-
-        </div>
-        
-        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-      </form>
+<!-- Modal -->
+<div class="modal" id="ModalScrollable" tabindex="-1" role="dialog" aria-labelledby="ModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalScrollableTitle">Contact Me</h5>
+      </div>
+      <div class="modal-body">
+        <form action="contact.php" method="POST" class="form-container" id="contact-form" role="form">
+          <input type="hidden" id="g-token" name="g-token"/>
+          <div class="messages"></div>
+  
+          <div class="controls">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="form_name">First Name *</label>
+                          <input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required"
+                              data-error="First name is required.">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="form_lastname">Last Name *</label>
+                          <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Last Name" required="required"
+                              data-error="Last name is required.">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="form_email">Email *</label>
+                          <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required"
+                              data-error="Valid email is required.">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <label for="form_phone">Phone</label>
+                          <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone Number">
+                          <div class="help-block with-errors"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="form_message">Message *</label>
+                  <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="4" required="required"
+                      data-error="Please, leave us a message."></textarea>
+                  <div class="help-block with-errors"></div>
+              </div>
+              <input type="submit" class="btn btn-success btn-send" value="Send message">
+  
+              <p class="text-muted">
+                  <strong>*</strong> These fields are required. <br>
+                  This site is protected by reCAPTCHA and the Google
+                  <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                  <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+              </p>
+  
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn cancel" data-dismiss="modal">Close</button>
       </div>
     </div>
+  </div>
+</div> 
 
 <!-- FOOTER SECTION -->
         <footer>
             <p>&copy; 2019 &nbsp;|&nbsp; DarciKole.com &nbsp;| &nbsp;Seattle, WA</p>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
         <script src="portfolio.js"></script>
 
